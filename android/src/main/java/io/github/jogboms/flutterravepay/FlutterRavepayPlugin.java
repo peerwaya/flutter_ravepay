@@ -134,7 +134,7 @@ public class FlutterRavepayPlugin implements PluginRegistry.ActivityResultListen
         // ravepayManager.setMeta((List<Meta>) (List) chargeParams.get("metadata"));
         ravepayManager.acceptAccountPayments((boolean) chargeParams.get("useAccounts"));
         ravepayManager.acceptCardPayments((boolean) chargeParams.get("useCards"));
-        ravepayManager.acceptAchPayments(true);
+        ravepayManager.acceptAchPayments((boolean) chargeParams.get("useACH"));
         ravepayManager.onStagingEnv((boolean) chargeParams.get("isStaging"));
         ravepayManager.allowSaveCardFeature((boolean) chargeParams.get("isStaging"));
         ravepayManager.isPreAuth((boolean) chargeParams.get("isPreAuth"));

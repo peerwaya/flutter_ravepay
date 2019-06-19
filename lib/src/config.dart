@@ -15,6 +15,7 @@ class RavepayConfig {
   final String txRef;
   final bool useAccounts;
   final bool useCards;
+  final bool useACH;
   final bool isStaging;
   final bool isPreAuth;
   final bool useSave;
@@ -35,6 +36,7 @@ class RavepayConfig {
     this.metadata,
     this.useAccounts = true,
     this.useCards = true,
+    this.useACH = false,
     this.isStaging = true,
     this.isPreAuth = false,
     this.useSave = true,
@@ -61,6 +63,7 @@ class RavepayConfig {
       "isStaging": isStaging,
       "isPreAuth": isPreAuth,
       "useSave": useSave,
+      "useACH": useACH,
       "style": style,
     };
   }
