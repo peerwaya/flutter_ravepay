@@ -29,7 +29,6 @@ class _MyAppState extends State<MyApp> {
         useCards: true,
         isStaging: false,
         useSave: true,
-        style: true,
         metadata: [
           const RavepayMeta("email", "evenmatrix@gmail.com"),
           const RavepayMeta("id", "1994"),

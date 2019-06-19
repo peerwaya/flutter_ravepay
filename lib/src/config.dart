@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 import 'package:flutter_ravepay/src/meta.dart';
 
 class RavepayConfig {
@@ -17,7 +18,7 @@ class RavepayConfig {
   final bool isStaging;
   final bool isPreAuth;
   final bool useSave;
-  final bool style;
+  final String style;
   final List<RavepayMeta> metadata;
 
   const RavepayConfig({
@@ -26,11 +27,11 @@ class RavepayConfig {
     @required this.currency,
     @required this.email,
     @required this.firstname,
-    this.lastname = "",
-    this.narration = "",
     @required this.publicKey,
     @required this.encryptionKey,
     @required this.txRef,
+    this.lastname = "",
+    this.narration = "",
     this.metadata,
     this.useAccounts = true,
     this.useCards = true,
@@ -60,7 +61,7 @@ class RavepayConfig {
       "isStaging": isStaging,
       "isPreAuth": isPreAuth,
       "useSave": useSave,
-      "style": null,
+      "style": style,
     };
   }
 }
