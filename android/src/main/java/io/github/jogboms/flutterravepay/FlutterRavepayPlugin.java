@@ -114,7 +114,7 @@ public class FlutterRavepayPlugin implements PluginRegistry.ActivityResultListen
     ravepayManager.setAmount(Double.parseDouble((String) chargeParams.get("amount")));
     ravepayManager.setCountry((String) chargeParams.get("country"));
     ravepayManager.setCurrency((String) chargeParams.get("currency"));
-    ravepayManager.setEmail((String) chargeParams.get("email"));
+    ravepayManager.setEmail("evenmatrix@gmail.com");
 
     ravepayManager.setfName((String) chargeParams.get("firstname"));
     ravepayManager.setlName((String) chargeParams.get("lastname"));
@@ -122,7 +122,7 @@ public class FlutterRavepayPlugin implements PluginRegistry.ActivityResultListen
 
     ravepayManager.setPublicKey((String) chargeParams.get("publicKey"));
 
-    ravepayManager.setSecretKey((String) chargeParams.get("secretKey"));
+    ravepayManager.setEncryptionKey((String) chargeParams.get("encryptionKey"));
     ravepayManager.setTxRef((String) chargeParams.get("txRef"));
 
     List<Meta> metaList = new ArrayList<Meta>();
@@ -134,8 +134,10 @@ public class FlutterRavepayPlugin implements PluginRegistry.ActivityResultListen
     // ravepayManager.setMeta((List<Meta>) (List) chargeParams.get("metadata"));
     ravepayManager.acceptAccountPayments((boolean) chargeParams.get("useAccounts"));
     ravepayManager.acceptCardPayments((boolean) chargeParams.get("useCards"));
+    ravepayManager.acceptAchPayments(true);
     ravepayManager.onStagingEnv((boolean) chargeParams.get("isStaging"));
-    ravepayManager.allowSaveCardFeature((boolean) chargeParams.get("useSave"));
+    ravepayManager.allowSaveCardFeature(true);
+    ravepayManager.isPreAuth((boolean) chargeParams.get("isPreAuth"));
 
     boolean hasTheme = hasStringKey("style");
     if (hasTheme) {

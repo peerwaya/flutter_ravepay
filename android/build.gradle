@@ -16,24 +16,31 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'https://jitpack.io' }
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 26
 
     defaultConfig {
-        minSdkVersion 16
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        minSdkVersion 24
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a", "x86", "armeabi"
+        }
     }
     lintOptions {
         disable 'InvalidPackage'
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation 'com.github.Flutterwave:rave-android:1.0.18'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.github.Flutterwave:rave-android:1.0.38'
 }

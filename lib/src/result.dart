@@ -35,7 +35,7 @@ class RavepayResult {
       __status = __payload['status'];
       __message = __payload['message'];
       final Map data = __payload['data'];
-
+      print("data: $data");
       if (data != null) {
         id = int.tryParse(data["id"].toString());
         amount = double.tryParse(data["amount"].toString());
@@ -97,7 +97,7 @@ class RavepayResult {
       "updatedAt": updatedAt.toString(),
       "txRef": txRef,
       "flwRef": flwRef,
-      "card": card.toMap(),
+      "card": card?.toMap(),
     };
   }
 
