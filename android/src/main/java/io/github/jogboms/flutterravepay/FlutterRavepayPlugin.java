@@ -142,7 +142,7 @@ public class FlutterRavepayPlugin implements PluginRegistry.ActivityResultListen
         boolean hasTheme = hasStringKey("style");
         if (hasTheme) {
             int styleId = registrar.activity().getResources().getIdentifier((String) chargeParams.get("style"), "style", registrar.activity().getPackageName());
-            ravepayManager.withTheme((int) chargeParams.get(styleId));
+            ravepayManager.withTheme(styleId);
         }
 
         ravepayManager.initialize();
